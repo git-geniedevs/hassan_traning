@@ -1,10 +1,10 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
-import One from "./Exersice/One";
-import Three from "./Exersice/Three";
+import ImageScreen from "./app/Screens/ImageScreen";
+import UserDetailScreen from "./app/Screens/UserDetailScreen";
+import WelcomeScreen from "./app/Screens/WelcomScreen";
+import UserScreen from "./app/Screens/UserScreen";
 import Two from "./Exersice/Two";
-import UserScreen from "./Exersice/UserScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -12,13 +12,17 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        screenOptions={{ headerShown: "false" }}
         initialRouteName="Two"
+        screenOptions={{
+          headerShown: false,
+        }}
       >
-        <Stack.Screen name="One" component={One} />
         <Stack.Screen name="Two" component={Two} />
-        <Stack.Screen name="Three" component={Three} />
+
+        <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
+        <Stack.Screen name="ImageScreen" component={ImageScreen} />
         <Stack.Screen name="UserScreen" component={UserScreen} />
+        <Stack.Screen name="UserDetailScreen" component={UserDetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
