@@ -62,7 +62,7 @@ export default function UserScreen() {
         width: 370,
         height: 40,
 
-        marginTop: 10,
+        marginTop: 20,
         justifyContent: "space-evenly",
       }}
     >
