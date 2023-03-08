@@ -47,11 +47,11 @@ export default function Two() {
         <View style={styles.box}>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate("Three");
+              navigation.navigate("WelcomeScreen");
             }}
           >
             <Text style={{ fontSize: 20, fontWeight: "700", color: "white" }}>
-              Goto Three
+              Welcome Screen
             </Text>
           </TouchableOpacity>
         </View>
@@ -62,14 +62,22 @@ export default function Two() {
             }}
           >
             <Text style={{ fontSize: 20, fontWeight: "700", color: "white" }}>
-              UserScreen
+              User Screen
             </Text>
           </TouchableOpacity>
         </View>
       </View>
       <View style={styles.row}>
         <View style={styles.box}>
-          <Text style={styles.text}>Hi</Text>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("ImageScreen");
+            }}
+          >
+            <Text style={{ fontSize: 20, fontWeight: "700", color: "white" }}>
+              Image View Screen
+            </Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.box}>
           <Text style={styles.text}>Hi</Text>
