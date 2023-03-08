@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import One from "./Exersice/One";
 import Three from "./Exersice/Three";
 import Two from "./Exersice/Two";
+import UserScreen from "./Exersice/UserScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -17,6 +18,7 @@ export default function App() {
         <Stack.Screen name="One" component={One} />
         <Stack.Screen name="Two" component={Two} />
         <Stack.Screen name="Three" component={Three} />
+        <Stack.Screen name="UserScreen" component={UserScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

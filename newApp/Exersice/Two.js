@@ -56,7 +56,15 @@ export default function Two() {
           </TouchableOpacity>
         </View>
         <View style={styles.box}>
-          <Text style={styles.text}>Hi</Text>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("UserScreen");
+            }}
+          >
+            <Text style={{ fontSize: 20, fontWeight: "700", color: "white" }}>
+              UserScreen
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
       <View style={styles.row}>
