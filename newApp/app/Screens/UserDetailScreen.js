@@ -16,27 +16,66 @@ import CustomHeader from "../Components/CustomHeader";
 
 export default function UserDetailScreen({ route }) {
   const navigation = useNavigation();
-  const [user, setUser] = useState(route.params.item);
+
+  //Dummydata
+  const Status = [
+    {
+      data: [
+        {
+          key: "1",
+          text: "Good Night",
+        },
+        {
+          key: "2",
+          text: "Away",
+        },
+
+        {
+          key: "3",
+          text: "Need Sleep",
+        },
+        {
+          key: "4",
+          text: "Morning",
+        },
+        {
+          key: "5",
+          text: "Be the Best",
+        },
+      ],
+    },
+  ];
+
+  ///
+
+  const name = route.params.item.login;
+  const email = route.params.item.html_url;
+  const imageUrl = route.params.item.avatar_url;
+  const followers = route.params.item.url.followers;
+
+  //const [status, setStatus] = useState([]);
+
   return (
     <SafeAreaView style={styles.container}>
       {/* custom header */}
       <CustomHeader
+        Icon1="chevron-back"
         Title="My Profile"
-        Btn1={() => {
+        BtnLeft={() => {
           navigation.goBack();
         }}
       />
       <Pressable style={styles.ListView}>
         <Image
           style={{ width: 60, height: 60, borderRadius: 40 }}
-          source={{ uri: "https://picsum.photos/200/300" }}
+          source={{ uri: imageUrl }}
         />
         <View style={{ justifyContent: "center", width: "60%" }}>
           <Text style={{ fontSize: 17, fontWeight: "600", color: "black" }}>
-            {user.name}
+            {name}
           </Text>
           <Text style={{ fontSize: 13, fontWeight: "300", color: "black" }}>
-            {user.email}
+            {email}
           </Text>
         </View>
         <AntDesign
@@ -48,6 +87,7 @@ export default function UserDetailScreen({ route }) {
           }}
         />
       </Pressable>
+
       <View style={{ flexWrap: "wrap" }}>
         <Text style={{ textAlign: "left", marginLeft: 30 }}>My Status</Text>
         <View
@@ -100,6 +140,9 @@ export default function UserDetailScreen({ route }) {
             <Text style={{ color: "white" }}> At Work</Text>
           </View>
         </View>
+      </View>
+      <View style={{ flexDirection: "row", justifyContent: "center" }}>
+        <Text>Followers : {followers}</Text>
       </View>
     </SafeAreaView>
   );
